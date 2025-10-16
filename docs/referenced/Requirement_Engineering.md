@@ -10,7 +10,7 @@ zentrale Stakeholder: Endnutzer (= Kunden)
 
 ## Lasten- / Pflichtenheft
 
-[Lastenheft:  Stichmuster Nähmaschine](docs/referenced/Requirement_Engineering/Lastenheft.md)
+[Lastenheft:  Stichmuster Nähmaschine](.referenced/Requirement_Engineering/Lastenheft.md)
 
 [Pflichtenheft: Stichmuster Nähmaschine](/Requirement_Engineering/Pflichtenheft.md)
 

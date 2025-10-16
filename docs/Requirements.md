@@ -1,20 +1,5 @@
-<style>
-  .muss {
-    background-color: rgba(51, 170, 51, .4)
-  }
-</style>
-<style>
-  .soll {
-    background-color: rgba(255, 174, 0, 0.4);
-  }
-</style>
-<style>
-  .kann {
-    background-color: rgba(170, 51, 51, 0.4);
-  }
-</style>
 
-# Requirements: Batteriestandsanzeige für Rasierapparat
+# Requirements: Nähmaschine
 
 **Legende:** <p class="muss">Muss-Requirement<p> <p class="soll">Soll-Requirement<p> <p class="kann">Kann-Requirement<p>
 
@@ -131,71 +116,65 @@
   <thead>
     <tr>
       <th>Nr.</th>
-      <th>Jira-Referenz</th>
       <th>Titel</th>
       <th>Beschreibung</th>
     </tr>
   </thead>
   <tbody>
     <tr class="soll">
-      <td>1.3</td><td>BAT-9</td>
-      <td>Keine zusätzliche Bedienung</td>
-      <td>Die Batteriestandserkennung erfordert keine zusätzliche Interaktion zur Rasur.</td>
+      <td>NF1.1</td>
+      <td>Menüführung</td>
+      <td>Menüführung max. 3 Bedienebenen.</td>
     </tr>
     <tr class="muss">
-      <td>2.4</td><td>BAT-13</td>
-      <td>Anzeige bei längerer Nichtbenutzung</td>
-      <td>Die Batteriestandskontrolle funktioniert auch nach längerer Nichtnutzung zuverlässig.</td>
+      <td>NF2.1</td>
+      <td>Geschw. Bereich</td>
+      <td>Geschwindigkeitsbereich: 200–900 Stiche/min.</td>
     </tr>
     <tr class="soll">
-      <td>2.6</td><td>BAT-15</td>
-      <td>Intuitive Anzeige</td>
-      <td>Der Batteriestand wird in einer für den Nutzer klar verständlichen Form dargestellt.</td>
+      <td>NF4.1</td>
+      <td>Einstellbereich</td>
+      <td>Einstellbereich 1–9.</td>
     </tr>
     <tr class="soll">
-      <td>2.7</td><td>BAT-16</td>
+      <td>NF6.1</td>
       <td>Angenehme Anzeige</td>
       <td>Die Anzeige ist nicht zu hell oder visuell aufdringlich.</td>
     </tr>
     <tr class="kann">
-      <td>2.8</td><td>BAT-17</td>
+      <td>NF6.2</td>
       <td>Barrierefreie Anzeige (Farbenblindheit)</td>
       <td>Die Anzeige ist auch für farbenblinde Nutzer eindeutig erkennbar.</td>
     </tr>
     <tr class="kann">
-      <td>2.9</td><td>BAT-18</td>
+      <td>NF6.3</td>
       <td>Barrierefreie Anzeige (Sehschwäche)</td>
       <td>Die Anzeige ist auch für Nutzer mit eingeschränktem Sehvermögen gut lesbar.</td>
     </tr>
     <tr class="soll">
-      <td>2.10</td><td>BAT-19</td>
+      <td>NF6.4</td>
       <td>Anzeige ohne Verzögerungen</td>
       <td>Die Anzeige erfolgt innerhalb von &lt;1 Sekunde nach Benutzerinteraktion.</td>
     </tr>
     <tr class="muss">
-      <td>3.4</td><td>BAT-23</td>
-      <td>Anzeigetoleranz</td>
-      <td>Die Prozentanzeige muss mit einer Toleranz von ±5 % gegenüber der realen Kapazität übereinstimmen.</td>
-    </tr>
-    <tr class="muss">
-      <td>3.5</td><td>BAT-24</td>
-      <td>Alterungsrobustheit</td>
-      <td>Auch bei &lt;80 % Akkukapazität nach mehreren Jahren bleibt die Anzeige zuverlässig.</td>
+      <td>NF1.2</td>
+      <td>Wertetoleranzz</td>
+      <td>Die Genauigkeiten müssen mit einer Toleranz von ±5 % gegenüber der realen werte übereinstimmen.</td>
     </tr>
     <tr class="kann">
-      <td>3.6</td><td>BAT-25</td>
-      <td>Ressourcenschonende Kalibrierung</td>
-      <td>Die Kalibrierung darf nur minimal Rechen- und Speicherressourcen beanspruchen.</td>
+      <td>NF1.3</td>
+      <td>Ressourcenschonende Einstellung</td>
+      <td>Die Einstellungen dürfen nur minimal Rechen- und Speicherressourcen beanspruchen.</td>
     </tr>
     <tr class="soll">
-      <td>4.3</td><td>BAT-28</td>
+      <td>NF6.5</td>
       <td>Wahrnehmbarkeit der Warnung</td>
       <td>Die Warnsignale müssen in typischen Alltagssituationen gut wahrnehmbar sein (z. B. im Bad oder bei Geräuschkulisse).</td>
     </tr>
     <tr class="soll">
-      <td>5.6</td><td>BAT-34</td>
-      <td>Ladeanzeige energieeffizient</td>
-      <td>Die Ladezustandsanzeige muss stromsparend sein und den Ladevorgang nicht negativ beeinflussen.</td>
+      <td>5.6</td>
+      <td>Energieeffizient</td>
+      <td>Die Nähmaschine muss Energieeffizient sein.</td>
     </tr>
   </tbody>
 </table>

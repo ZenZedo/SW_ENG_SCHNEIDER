@@ -120,6 +120,16 @@
   </thead>
   <tbody>
     <tr class="soll">
+      <td>NF7.1</td>
+      <td>Programmiersprache</td>
+      <td>Das Produkt soll in C++ entwicklet werden.</td>
+    </tr>
+    <tr class="soll">
+      <td>NF7.2</td>
+      <td>Budget</td>
+      <td>Das Budget beträgt 1 Döner und n Redbull.</td>
+    </tr>
+    <tr class="soll">
       <td>NF1.1</td>
       <td>Menüführung</td>
       <td>Menüführung max. 3 Bedienebenen.</td>

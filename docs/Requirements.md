@@ -172,7 +172,7 @@
       <td>Die Warnsignale müssen in typischen Alltagssituationen gut wahrnehmbar sein (z. B. im Bad oder bei Geräuschkulisse).</td>
     </tr>
     <tr class="soll">
-      <td>5.6</td>
+      <td>NF6.6</td>
       <td>Energieeffizient</td>
       <td>Die Nähmaschine muss Energieeffizient sein.</td>
     </tr>

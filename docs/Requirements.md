@@ -24,106 +24,100 @@
   <thead>
     <tr>
       <th>Nr.</th>
-      <th>Jira-Referenz</th>
       <th>Titel</th>
       <th>Beschreibung</th>
     </tr>
   </thead>
   <tbody>
     <tr class="muss">
-      <td>1.1</td><td>BAT-7</td>
-      <td>Automatische Spannungsmessung</td>
-      <td>Die Spannung des Akkus wird zuverlässig gemessen.</td>
+      <td>F1.1</td>
+      <td>Stichmuster</td>
+      <td>Die Maschine muss mindestens 10 Stichmuster bereitstellen.</td>
     </tr>
-    <tr class="soll">
-      <td>1.2</td><td>BAT-8</td>
-      <td>Ladezustandsberechnung in Prozent</td>
-      <td>Die Spannung wird zuverlässig in Prozent umgerechnet.</td>
+    <tr class="muss">
+      <td>F1.2</td>
+      <td>Auswahl SM</td>
+      <td>Der Benutzer muss ein Stichmuster über Tasten, Drehregler oder Touchdisplay auswählen können.</td>
     </tr>
-    <tr class="soll">
-      <td>2.1</td><td>BAT-10</td>
-      <td>Anzeige aktueller Batteriestand</td>
-      <td>Batteriestand wird beim Einschalten angezeigt.</td>
-    </tr>
-    <tr class="soll">
-      <td>2.2</td><td>BAT-11</td>
-      <td>Einfache Statusanzeige bei Knopfdruck</td>
-      <td>Bei kurzem Drücken des An-/Aus-Knopfes wird der aktuelle Batteriestand angezeigt.</td>
+    <tr class="muss">
+      <td>F1.3</td>
+      <td>Einstellung</td>
+      <td>Nach der Auswahl müssen die Parameter (Stichlänge, -breite, Nadelposition) automatisch geladen werden.</td>
     </tr>
     <tr class="kann">
-      <td>2.3</td><td>BAT-12</td>
-      <td>Restlaufzeit auf Knopfdruck</td>
-      <td>Bei erneutem kurzem Drücken des An-/Aus-Knopfes wird die Restbetriebszeit angezeigt.</td>
-    </tr>
-    <tr class="soll">
-      <td>2.5</td><td>BAT-14</td>
-      <td>Anzeige bei Benutzerinteraktion aktualisieren</td>
-      <td>Die Anzeige wird bei jeder Benutzerinteraktion automatisch aktualisiert.</td>
-    </tr>
-    <tr class="muss">
-      <td>3.1</td><td>BAT-20</td>
-      <td>Spannungsreferenz definieren</td>
-      <td>Es werden feste Spannungswerte für leer und voll als Referenz zur Anzeige genutzt.</td>
-    </tr>
-    <tr class="muss">
-      <td>3.2</td><td>BAT-21</td>
-      <td>Initiale Kalibrierung</td>
-      <td>Beim ersten vollständigen Lade- und Entladezyklus erfolgt eine Kalibrierung.</td>
-    </tr>
-    <tr class="soll">
-      <td>3.3</td><td>BAT-22</td>
-      <td>Rekalibrierung nach Ladezyklen</td>
-      <td>Nach mehreren vollständigen Ladezyklen erfolgt automatisch eine neue Kalibrierung.</td>
-    </tr>
-    <tr class="soll">
-      <td>4.1</td><td>BAT-26</td>
-      <td>Warnung bei niedrigem Batteriestand</td>
-      <td>Bei Unterschreiten der Warnschwelle gibt es ein visuelles und akustisches Signal als Warnung für den Nutzer.</td>
+      <td>F1.4</td>
+      <td>Anzeige SM</td>
+      <td>Das aktuell gewählte Stichmuster soll im Display angezeigt werden.</td>
     </tr>
     <tr class="kann">
-      <td>4.2</td><td>BAT-27</td>
-      <td>Warnschwelle einstellbar</td>
-      <td>Der Benutzer kann einstellen, ob die Warnung bei 30 % oder 10 % Restladung erfolgt.</td>
-    </tr>
-    <tr class="soll">
-      <td>5.1</td><td>BAT-29</td>
-      <td>Ladeaktivität anzeigen</td>
-      <td>Der laufende Ladevorgang wird klar angezeigt.</td>
-    </tr>
-    <tr class="soll">
-      <td>5.2</td><td>BAT-30</td>
-      <td>Ladeabschluss anzeigen</td>
-      <td>Es wird eindeutig angezeigt, wenn der Akku vollständig geladen ist.</td>
-    </tr>
-    <tr class="soll">
-      <td>5.3</td><td>BAT-31</td>
-      <td>Ladefehler anzeigen</td>
-      <td>Der Nutzer wird visuell informiert, wenn der Ladevorgang fehlschlägt.</td>
+      <td>F1.5</td>
+      <td>Selbstwahl SM</td>
+      <td>Die Maschine kann eigene Stichmusterkombinationen speichern.</td>
     </tr>
     <tr class="muss">
-      <td>5.4</td><td>BAT-32</td>
-      <td>Ladezustand elektronisch erkennen</td>
-      <td>Die Ladeelektronik erkennt, ob der Ladevorgang aktiv, abgeschlossen oder fehlgeschlagen ist.</td>
+      <td>F2.1</td>
+      <td>Stufenlose Geschw.</td>
+      <td>Die Nähgeschwindigkeit muss stufenlos über das Fußpedal regelbar sein.</td>
+    </tr>
+    <tr class="muss">
+      <td>F2.2</td>
+      <td>Stopp loslassen</td>
+      <td>Die Maschine muss bei Loslassen des Pedals sofort stoppen.</td>
+    </tr>
+    <tr class="muss">
+      <td>F2.3</td>
+      <td>Festlegung vmax</td>
+      <td>Eine maximale Geschwindigkeit soll festgelegt werden können.</td>
     </tr>
     <tr class="kann">
-      <td>5.5</td><td>BAT-33</td>
-      <td>mögliche Rasur während Laden signalisieren</td>
-      <td>Während des Ladevorgangs gibt es eine visuelle Meldung, wenn eine Rasur möglich ist.</td>
+      <td>F2.4</td>
+      <td>Anzeige Geschw.</td>
+      <td>Die aktuelle Geschwindigkeit kann im Display angezeigt werden. </td>
     </tr>
     <tr class="muss">
-      <td>6.1</td><td>BAT-35</td>
-      <td>Unterspannungsschutz</td>
-      <td>Das Gerät schaltet sich bei kritischem Akkustand automatisch ab, um Tiefentladung zu vermeiden.</td>
+      <td>F3.1</td>
+      <td>LED Benutzung</td>
+      <td> Die Maschine muss den Nähbereich mit einer LED ausleuchten. </td>
+    </tr>
+    <tr class="soll">
+      <td>F3.2</td>
+      <td>Manuelle Bedienung LED</td>
+      <td>Die Beleuchtung soll manuell ein- und ausschaltbar sein. </td>
+    </tr>
+    <tr class="kann">
+      <td>F3.3</td>
+      <td>Helligkeit LED</td>
+      <td>Die Beleuchtung kann dimmbar sein.</td>
     </tr>
     <tr class="muss">
-      <td>6.2</td><td>BAT-36</td>
-      <td>Überladeschutz</td>
-      <td>Der Ladevorgang wird automatisch bei Erreichen der maximalen Spannung abgebrochen.</td>
+      <td>F4.1</td>
+      <td>Fadenspannung</td>
+      <td>Die Fadenspannung muss einstellbar sein (manuell oder elektronisch). </td>
     </tr>
     <tr class="muss">
-      <td>6.3</td><td>BAT-37</td>
-      <td>Temperaturüberwachung beim Laden</td>
-      <td>Die Temperatur wird während des Ladevorgangs kontrolliert.</td>
+      <td>F4.2</td>
+      <td>Fadenspannung Halten</td>
+      <td>Die Maschine muss die eingestellte Spannung während des Nähvorgangs konstant halten.</td>
+    </tr>
+    <tr class="kann">
+      <td>F4.3</td>
+      <td>Anzeige Fadenspannung</td>
+      <td>Die aktuelle Fadenspannung soll im Display angezeigt werden. </td>
+    </tr>
+    <tr class="muss">
+      <td>F5.1</td>
+      <td>Stichlänge</td>
+      <td>Die Stichlänge muss im Bereich 0–5 mm einstellbar sein.</td>
+    </tr>
+    <tr class="muss">
+      <td>F5.2</td>
+      <td>Stichbreite</td>
+      <td>Die Stichbreite muss im Bereich 0–7 mm einstellbar sein.</td>
+    </tr>
+    <tr class="kann">
+      <td>F5.3</td>
+      <td>Länge/Breite anzeige</td>
+      <td>Die aktuellen Werte sollen im Display angezeigt werden. </td>
     </tr>
   </tbody>
 </table>

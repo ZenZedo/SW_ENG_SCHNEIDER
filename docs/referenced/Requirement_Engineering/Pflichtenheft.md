@@ -28,10 +28,10 @@ Die Maschine soll mindestens 10 Stichmuster bereitstellen, die per Tasten, Drehr
 | Anforderungsnummer | Umsetzung |
 |--------------------|-----------|
 | F1.1 – F1.5        | Speicherung und Auswahl von mindestens 10 Stichmustern, automatische Parameterladung, eigene Musterkombinationen speicherbar |
-| F2.1 – F2.4        | PWM-gesteuerte, stufenlose Motorregelung, sofortiger Stopp bei Pedallosslassen, vmax begrenzbar, Geschwindigkeit im Display sichtbar |
+| F2.1 – F2.4        | PWM-gesteuerte, Pedalbasierte Motorregelung, sofortiger Stopp bei Pedallosslassen, vmax begrenzbar, Geschwindigkeit im Display sichtbar |
 | F3.1 – F3.3        | LED-Beleuchtung steuerbar, manuell schaltbar, dimmbar via Software PWM |
 | F4.1 – F4.3        | Elektronische Regelung der Fadenspannung mit Messwertanzeige und Konstanthaltung |
-| F5.1 – F5.3        | Einstellbare Stichlänge (0–5 mm), Stichbreite (0–7 mm), Anzeige der Werte im Display |
+| F5.1 – F5.3        | Einstellbare Stichlänge (1.5–5 mm), Stichbreite (2.5–7 mm), Anzeige der Werte im Display |
 
 ## 5. Umsetzung der nicht-funktionalen Anforderungen
 
@@ -39,7 +39,7 @@ Die Maschine soll mindestens 10 Stichmuster bereitstellen, die per Tasten, Drehr
 |--------------------|-----------|
 | NF1.1 – NF1.3      | Klare Menüführung mit max. 3 Ebenen, Softwareentwicklung in C++, Budgetvorgaben berücksichtigen |
 | NF2.1 – NF4.1      | Geschwindigkeitsbereich 200–900 Stiche/min, Einstellbereich 1–9 |
-| NF6.1 – NF6.6      | Angenehme, barrierefreie, verzögerungsfreie Anzeige, ressourcenschonende Software, Wahrnehmbarkeit der Warnsignale, Energieeffiziente Bauweise |
+| NF6.1 – NF6.6      | Angenehme, verzögerungsfreie Anzeige |
 
 ## 6. Tests und Abnahme
 - Funktionsprüfung aller Stichmuster und Bedienarten

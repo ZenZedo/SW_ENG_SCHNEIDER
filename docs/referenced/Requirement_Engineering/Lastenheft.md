@@ -15,7 +15,7 @@
     <tr class="muss">
       <td>F1.1</td>
       <td>Stichmuster</td>
-      <td>Die Maschine muss mindestens 10 Stichmuster bereitstellen.</td>
+      <td>Die Maschine sollte 10-30 Stichmuster bereitstellen.</td>
     </tr>
     <tr class="muss">
       <td>F1.2</td>
@@ -49,7 +49,7 @@
     </tr>
     <tr class="muss">
       <td>F2.3</td>
-      <td>Festlegung vmax</td>
+      <td>Festlegung Vmax</td>
       <td>Eine maximale Geschwindigkeit soll festgelegt werden können.</td>
     </tr>
     <tr class="kann">
@@ -70,22 +70,17 @@
     <tr class="kann">
       <td>F3.3</td>
       <td>Helligkeit LED</td>
-      <td>Die Beleuchtung kann dimmbar sein.</td>
+      <td>Die Helligkeit der Beleuchtung soll einstellbar sein.</td>
     </tr>
     <tr class="muss">
       <td>F4.1</td>
       <td>Fadenspannung</td>
-      <td>Die Fadenspannung muss einstellbar sein (manuell oder elektronisch). </td>
+      <td>Die Fadenspannung muss einstellbar sein. </td>
     </tr>
     <tr class="muss">
       <td>F4.2</td>
       <td>Fadenspannung Halten</td>
       <td>Die Maschine muss die eingestellte Spannung während des Nähvorgangs konstant halten.</td>
-    </tr>
-    <tr class="kann">
-      <td>F4.3</td>
-      <td>Anzeige Fadenspannung</td>
-      <td>Die aktuelle Fadenspannung soll im Display angezeigt werden. </td>
     </tr>
     <tr class="muss">
       <td>F5.1</td>
@@ -127,12 +122,12 @@
     <tr class="soll">
       <td>NF7.2</td>
       <td>Budget</td>
-      <td>Das Budget beträgt 1 Döner und n Redbull.</td>
+      <td>Das Budget beträgt 1 Döner und einen Redbull.</td>
     </tr>
     <tr class="soll">
       <td>NF1.1</td>
       <td>Menüführung</td>
-      <td>Menüführung max. 3 Bedienebenen.</td>
+      <td>Die Menüführung soll max. 3 Bedienebenen besitzen.</td>
     </tr>
     <tr class="muss">
       <td>NF2.1</td>
@@ -142,7 +137,7 @@
     <tr class="soll">
       <td>NF4.1</td>
       <td>Einstellbereich</td>
-      <td>Einstellbereich 1–9.</td>
+      <td>Einstellbereich der Fadenspannung soll im Bereich 1–9 sein.</td>
     </tr>
     <tr class="soll">
       <td>NF6.1</td>

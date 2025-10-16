@@ -1,8 +1,6 @@
 
 # Requirements: Nähmaschine
 
-**Legende:** <p class="muss">Muss-Requirement<p> <p class="soll">Soll-Requirement<p> <p class="kann">Kann-Requirement<p>
-
 ### 1. Funktionale Requirements
 
 <table>
@@ -201,14 +199,5 @@
 |-----------------|------------------------------------------------------------------------------------------------------------------------------------------|
 | 2.10 ↔ 3.6, 5.6 | Ressourcenschonung (3.6)  oder energieeffizienter Ladeanzeige (5.6) kann mit schneller Anzeigeaktualisierung (2.10) in Konflikt stehen . |
 | 2.7 ↔ 4.3       | Nicht störende Helligkeit (2.7) kann im Widerspruch stehen zu gut wahrnehmbaren Warnungen (4.4).                                         |
-
-### 5. Zusammengehörigkeiten zwischen Requirements
-
-| Requirement-Nr. | Beschreibung / Begründung                                                                                                                                                                                                             |
-|-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1.1, 1.2, 3.1   | Spannungsmessung (1.1), Umrechnung in Prozent (1.2) und Referenzwerte (3.1) bilden die Grundlage der Anzeige.                                                                                                                         |
-| 1.2, 3.4, 3.5   | Prozentanzeige (1.2) ist nur sinnvoll, wenn sie innerhalb einer definierten Toleranz (3.4) und auch bei alternden Akkus (3.5) stabil funktioniert.                                                                                    |
-| 4.1, 4.2        | Die Einstellung der Warnschwelle (4.2) ist nur sinnvoll, wenn es auch eine Warnung bei niedrigem Akkustand (4.1) gibt und diese ist von der Warnschwelle abhängig.                                                                    |
-| 6.2, 6.3, 5     | Der Überladeschutz (6.2) und die Temperaturüberwachung beim Laden (6.3) hängen mit dem Ladevorgang und seiner Anzeige im generellen (5) zusammen.                                                                                     |
 | 6.1, 1          | Der Unterspannungsschutz (6.1) hängt eng mit der Erkennung des aktuellen Batteriestandes (1) zusammen, da sonst keine Unterspannung ausgemacht werden kann.                                                                           |
 | 2.6, 4.3        | Die intuitive Batteriestandsanzeige (2.6) hängt mit der guten Wahrnehmbarkeit der Warnung bei niedrigem Batteriestand (4.4) zusammen, da beide dasselbe Ziel verfolgen. Für den Nutzer gut erkennbar und leicht verständlich zu sein. |

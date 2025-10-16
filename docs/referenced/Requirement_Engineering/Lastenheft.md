@@ -15,87 +15,72 @@
     <tr class="muss">
       <td>F1.1</td>
       <td>Stichmuster</td>
-      <td>Die Maschine sollte 10-30 Stichmuster bereitstellen.</td>
+      <td>Die Maschine hat 10-30 Stichmuster </td>
     </tr>
     <tr class="muss">
       <td>F1.2</td>
       <td>Auswahl SM</td>
-      <td>Der Benutzer muss ein Stichmuster über Tasten, Drehregler oder Touchdisplay auswählen können.</td>
+      <td>Stichmuster werden über Tasten, Drehregler oder Touchdisplay ausgewählt.</td>
     </tr>
     <tr class="muss">
       <td>F1.3</td>
       <td>Einstellung</td>
-      <td>Nach der Auswahl müssen die Parameter (Stichlänge, -breite, Nadelposition) automatisch geladen werden.</td>
+      <td>Die Nähmaschine hat 3 Parameter pro stichmuster: Stichlänge/breite, Nadelposition und Stichmuster. Die Nähmaschine führt diese Voreinstellungen bei wechsel des Stichmusters aus.</td>
     </tr>
     <tr class="kann">
       <td>F1.4</td>
       <td>Anzeige SM</td>
-      <td>Das aktuell gewählte Stichmuster soll im Display angezeigt werden.</td>
-    </tr>
-    <tr class="kann">
-      <td>F1.5</td>
-      <td>Selbstwahl SM</td>
-      <td>Die Maschine kann eigene Stichmusterkombinationen speichern.</td>
+      <td>Das aktuell gewählte Stichmuster wird im Display angezeigt.</td>
     </tr>
     <tr class="muss">
       <td>F2.1</td>
       <td>Stufenlose Geschw.</td>
-      <td>Die Nähgeschwindigkeit muss stufenlos über das Fußpedal regelbar sein.</td>
+      <td>Die Nähgeschwindigkeit muss in Abhängigkeit der Drucktiefe des Fußpedales regelbar sein.</td>
     </tr>
     <tr class="muss">
       <td>F2.2</td>
       <td>Stopp loslassen</td>
-      <td>Die Maschine muss bei Loslassen des Pedals sofort stoppen.</td>
+      <td>Die Maschine muss bei keinem Druck auf das Pedals sofort stoppen.</td>
     </tr>
     <tr class="muss">
       <td>F2.3</td>
       <td>Festlegung Vmax</td>
-      <td>Eine maximale Geschwindigkeit soll festgelegt werden können.</td>
+      <td>Eine maximale Geschwindigkeit soll durch den Benutzer festgelegt werden können.</td>
     </tr>
     <tr class="kann">
       <td>F2.4</td>
       <td>Anzeige Geschw.</td>
-      <td>Die aktuelle Geschwindigkeit kann im Display angezeigt werden. </td>
+      <td>Die eingestellt Maximalgeschwindigkeit kann im Display angezeigt werden. </td>
     </tr>
     <tr class="muss">
       <td>F3.1</td>
       <td>LED Benutzung</td>
-      <td> Die Maschine muss den Nähbereich mit einer LED ausleuchten. </td>
+      <td> Der Nähbereich der Nähmaschine wird mit einer LED ausgeleuchtet. </td>
     </tr>
     <tr class="soll">
       <td>F3.2</td>
       <td>Manuelle Bedienung LED</td>
-      <td>Die Beleuchtung soll manuell ein- und ausschaltbar sein. </td>
+      <td>Die Beleuchtung soll per schalter manuell ein- und ausschaltbar sein. </td>
     </tr>
     <tr class="kann">
       <td>F3.3</td>
       <td>Helligkeit LED</td>
-      <td>Die Helligkeit der Beleuchtung soll einstellbar sein.</td>
+      <td>Die Helligkeit der Beleuchtung soll von Helligkeitsstufe 1-5 einstellbar sein.</td>
     </tr>
     <tr class="muss">
       <td>F4.1</td>
       <td>Fadenspannung</td>
-      <td>Die Fadenspannung muss einstellbar sein. </td>
-    </tr>
-    <tr class="muss">
-      <td>F4.2</td>
-      <td>Fadenspannung Halten</td>
-      <td>Die Maschine muss die eingestellte Spannung während des Nähvorgangs konstant halten.</td>
+      <td>Die Fadenspannung muss von Spannungsgrad 1-5 einstellbar sein. </td>
     </tr>
     <tr class="muss">
       <td>F5.1</td>
       <td>Stichlänge</td>
-      <td>Die Stichlänge muss im Bereich 0–5 mm einstellbar sein.</td>
+      <td>Die Stichlänge muss im Bereich 1,5–5 mm einstellbar sein.</td>
     </tr>
     <tr class="muss">
       <td>F5.2</td>
       <td>Stichbreite</td>
-      <td>Die Stichbreite muss im Bereich 0–7 mm einstellbar sein.</td>
-    </tr>
-    <tr class="kann">
-      <td>F5.3</td>
-      <td>Länge/Breite anzeige</td>
-      <td>Die aktuellen Werte sollen im Display angezeigt werden. </td>
+      <td>Die Stichbreite muss im Bereich 2,5–7 mm einstellbar sein.</td>
     </tr>
   </tbody>
 </table>
@@ -142,17 +127,7 @@
     <tr class="soll">
       <td>NF6.1</td>
       <td>Angenehme Anzeige</td>
-      <td>Die Anzeige ist nicht zu hell oder visuell aufdringlich.</td>
-    </tr>
-    <tr class="kann">
-      <td>NF6.2</td>
-      <td>Barrierefreie Anzeige (Farbenblindheit)</td>
-      <td>Die Anzeige ist auch für farbenblinde Nutzer eindeutig erkennbar.</td>
-    </tr>
-    <tr class="kann">
-      <td>NF6.3</td>
-      <td>Barrierefreie Anzeige (Sehschwäche)</td>
-      <td>Die Anzeige ist auch für Nutzer mit eingeschränktem Sehvermögen gut lesbar.</td>
+      <td>Das Display muss bei allen üblichen Umgebungslichtbedingungen (Tageslicht, Innenbeleuchtung, Dunkelheit) lesbar sein.</td>
     </tr>
     <tr class="soll">
       <td>NF6.4</td>
@@ -163,16 +138,6 @@
       <td>NF1.2</td>
       <td>Wertetoleranzz</td>
       <td>Die Genauigkeiten müssen mit einer Toleranz von ±5 % gegenüber der realen werte übereinstimmen.</td>
-    </tr>
-    <tr class="kann">
-      <td>NF1.3</td>
-      <td>Ressourcenschonende Einstellung</td>
-      <td>Die Einstellungen dürfen nur minimal Rechen- und Speicherressourcen beanspruchen.</td>
-    </tr>
-    <tr class="soll">
-      <td>NF6.5</td>
-      <td>Wahrnehmbarkeit der Warnung</td>
-      <td>Die Warnsignale müssen in typischen Alltagssituationen gut wahrnehmbar sein (z. B. im Bad oder bei Geräuschkulisse).</td>
     </tr>
     <tr class="soll">
       <td>NF6.6</td>

@@ -20,7 +20,7 @@
     <tr class="muss">
       <td>F1.2</td>
       <td>Auswahl SM</td>
-      <td>Die Stichmuster müssen über einen Knopf, ein Drehrad, oder das Display auswählbar sein.</td>
+      <td>Die Stichmuster müssen über ein Drehrad, oder das Display auswählbar sein.</td>
     </tr>
     <tr class="muss">
       <td>F1.3</td>
@@ -56,17 +56,17 @@
     <tr class="soll">
       <td>F3.2</td>
       <td>Manuelle Bedienung LED</td>
-      <td>Die Beleuchtung hat 3 Stufen: Aus, Ein, Automatisch. Bei Automatisch aktiviert sich die LED bei betätigung des Pedals. </td>
+      <td>Die Beleuchtung hat einen 3 Stufen Schalter: Aus, Ein, Automatisch. Bei Automatisch aktiviert sich die LED bei betätigung des Pedals. </td>
     </tr>
     <tr class="kann">
       <td>F3.3</td>
       <td>Helligkeit LED</td>
-      <td>Die Helligkeit ist einstellbar von Helligkeitsstufe 1-5 wobei 1 dimmste und 5 hellste.</td>
+      <td>Die Helligkeit ist einstellbar durch ein drehrad von Helligkeitsstufe 1-5 wobei 1 dimmste und 5 hellste.</td>
     </tr>
     <tr class="muss">
       <td>F4.1</td>
       <td>Fadenspannung</td>
-      <td>Die Fadenspannung muss einstellbar sein (manuell oder elektronisch). </td>
+      <td>Die Fadenspannung muss einstellbar sein (drehrad). </td>
     </tr>
     <tr class="kann">
       <td>F4.3</td>

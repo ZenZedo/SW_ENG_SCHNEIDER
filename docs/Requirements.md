@@ -149,16 +149,6 @@
       <td>Angenehme Anzeige</td>
       <td>Die Anzeige ist nicht zu hell oder visuell aufdringlich.</td>
     </tr>
-    <tr class="kann">
-      <td>NF6.2</td>
-      <td>Barrierefreie Anzeige (Farbenblindheit)</td>
-      <td>Die Anzeige ist auch für farbenblinde Nutzer eindeutig erkennbar.</td>
-    </tr>
-    <tr class="kann">
-      <td>NF6.3</td>
-      <td>Barrierefreie Anzeige (Sehschwäche)</td>
-      <td>Die Anzeige ist auch für Nutzer mit eingeschränktem Sehvermögen gut lesbar.</td>
-    </tr>
     <tr class="soll">
       <td>NF6.4</td>
       <td>Anzeige ohne Verzögerungen</td>
@@ -168,21 +158,6 @@
       <td>NF1.2</td>
       <td>Wertetoleranzz</td>
       <td>Die Genauigkeiten müssen mit einer Toleranz von ±5 % gegenüber der realen werte übereinstimmen.</td>
-    </tr>
-    <tr class="kann">
-      <td>NF1.3</td>
-      <td>Ressourcenschonende Einstellung</td>
-      <td>Die Einstellungen dürfen nur minimal Rechen- und Speicherressourcen beanspruchen.</td>
-    </tr>
-    <tr class="soll">
-      <td>NF6.5</td>
-      <td>Wahrnehmbarkeit der Warnung</td>
-      <td>Die Warnsignale müssen in typischen Alltagssituationen gut wahrnehmbar sein (z. B. im Bad oder bei Geräuschkulisse).</td>
-    </tr>
-    <tr class="soll">
-      <td>NF6.6</td>
-      <td>Energieeffizient</td>
-      <td>Die Nähmaschine muss Energieeffizient sein.</td>
     </tr>
   </tbody>
 </table>

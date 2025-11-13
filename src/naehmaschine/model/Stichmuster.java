@@ -2,7 +2,7 @@ package naehmaschine.model;
 
 /**
  * Repräsentiert ein Stichmuster mit seinen Parametern.
- * Jedes Stichmuster hat eine Nummer, einen Namen und drei Parameter.
+ * Sprint 1: Vollständig implementiert
  */
 public class Stichmuster {
 

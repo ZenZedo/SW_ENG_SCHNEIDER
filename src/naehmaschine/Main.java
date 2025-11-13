@@ -7,15 +7,15 @@ import naehmaschine.controller.NaehmaschineController;
 
 /**
  * Hauptklasse für den Nähmaschinen-Simulator.
- * Implementiert das MVC-Pattern.
+ * Sprint 1: Stichmuster, Stichlänge, Stichbreite
+ * Sprint 2 (TODO): LED, Pedal, Fadenspannung
  *
  * @author Ihr Name
- * @version 1.0
+ * @version Sprint 1
  */
 public class Main {
 
     public static void main(String[] args) {
-        // GUI im Event Dispatch Thread starten
         SwingUtilities.invokeLater(() -> {
             // Model erstellen
             Naehmaschine model = new Naehmaschine();

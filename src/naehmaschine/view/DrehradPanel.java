@@ -3,12 +3,14 @@ package naehmaschine.view;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.awt.geom.*;
 import naehmaschine.model.LED;
 
 /**
- * F1.2: Drehrad-Steuerung für alle auswählbaren Einstellungen.
- * Ermöglicht die Auswahl und Anpassung von Parametern durch Drehen.
+ * Drehrad-Steuerung für alle auswählbaren Einstellungen.
+ * Sprint 1: Stichmuster, Länge, Breite funktional
+ * Sprint 2 (TODO): Fadenspannung, LED-Helligkeit, LED-Modus
+ *
+ * F1.2
  */
 public class DrehradPanel extends JPanel {
 
@@ -16,15 +18,14 @@ public class DrehradPanel extends JPanel {
 
     private enum SteuerModus {
         STICHMUSTER, STICHLAENGE, STICHBREITE,
-        FADENSPANNUNG, LED_HELLIGKEIT, LED_MODUS
+        FADENSPANNUNG, LED_HELLIGKEIT, LED_MODUS  // Sprint 2
     }
 
     private SteuerModus aktuellerModus;
-    private double drehwinkel; // 0-360 Grad
+    private double drehwinkel;
     private JPanel drehradCanvas;
     private JLabel werteLabel;
     private NaehmaschineView.DrehradListener listener;
-
     private Point lastMousePoint;
 
     public DrehradPanel() {
@@ -61,23 +62,35 @@ public class DrehradPanel extends JPanel {
 
     /**
      * Erstellt Panel mit Modus-Auswahl-Buttons.
+     * Sprint 1: Nur 3 Buttons aktiv
      */
     private JPanel createModusPanel() {
         JPanel panel = new JPanel(new GridLayout(6, 1, 5, 5));
         panel.setBorder(BorderFactory.createTitledBorder("Modus"));
 
+        // Sprint 1: Implementiert
         addModusButton(panel, "Stichmuster", SteuerModus.STICHMUSTER);
         addModusButton(panel, "Stichlänge", SteuerModus.STICHLAENGE);
         addModusButton(panel, "Stichbreite", SteuerModus.STICHBREITE);
-        addModusButton(panel, "Fadenspannung", SteuerModus.FADENSPANNUNG);
-        addModusButton(panel, "LED Helligkeit", SteuerModus.LED_HELLIGKEIT);
-        addModusButton(panel, "LED Modus", SteuerModus.LED_MODUS);
+
+        // TODO Sprint 2: Aktiviere diese Buttons
+        addModusButton(panel, "Fadenspannung (TODO)", SteuerModus.FADENSPANNUNG);
+        addModusButton(panel, "LED Helligkeit (TODO)", SteuerModus.LED_HELLIGKEIT);
+        addModusButton(panel, "LED Modus (TODO)", SteuerModus.LED_MODUS);
 
         return panel;
     }
 
     private void addModusButton(JPanel panel, String text, SteuerModus modus) {
         JButton button = new JButton(text);
+
+        // Sprint 1: Deaktiviere Sprint 2 Features
+        if (modus == SteuerModus.FADENSPANNUNG ||
+                modus == SteuerModus.LED_HELLIGKEIT ||
+                modus == SteuerModus.LED_MODUS) {
+            button.setEnabled(false);
+        }
+
         button.addActionListener(e -> {
             aktuellerModus = modus;
             updateWerteAnzeige();
@@ -96,7 +109,7 @@ public class DrehradPanel extends JPanel {
         int centerY = DIAL_SIZE / 2;
         int radius = DIAL_SIZE / 2 - 20;
 
-        // Äußerer Kreis (Drehrad-Body)
+        // Äußerer Kreis
         g2d.setColor(new Color(80, 80, 80));
         g2d.fillOval(centerX - radius, centerY - radius,
                 radius * 2, radius * 2);
@@ -107,7 +120,7 @@ public class DrehradPanel extends JPanel {
         g2d.fillOval(centerX - innerRadius, centerY - innerRadius,
                 innerRadius * 2, innerRadius * 2);
 
-        // Marker-Linien (12 Stück wie bei einer Uhr)
+        // Marker-Linien
         g2d.setColor(Color.WHITE);
         g2d.setStroke(new BasicStroke(2));
         for (int i = 0; i < 12; i++) {
@@ -158,7 +171,6 @@ public class DrehradPanel extends JPanel {
                     double angleDiff = Math.toDegrees(angle2 - angle1);
                     drehwinkel += angleDiff;
 
-                    // Normalisieren auf 0-360
                     while (drehwinkel < 0) drehwinkel += 360;
                     while (drehwinkel >= 360) drehwinkel -= 360;
 
@@ -181,10 +193,12 @@ public class DrehradPanel extends JPanel {
 
     /**
      * Aktualisiert die Werte-Anzeige basierend auf Modus und Winkel.
+     * Sprint 1: Nur erste 3 Modi funktional
      */
     private void updateWerteAnzeige() {
         String text = "";
         switch (aktuellerModus) {
+            // Sprint 1: Implementiert
             case STICHMUSTER:
                 int musterNr = (int)(drehwinkel / 360.0 * 15) + 1;
                 text = "Muster: " + musterNr;
@@ -197,18 +211,16 @@ public class DrehradPanel extends JPanel {
                 double breite = 2.5 + (drehwinkel / 360.0 * 4.5);
                 text = String.format("Breite: %.1f mm", breite);
                 break;
+
+            // TODO Sprint 2: Implementiere diese Cases
             case FADENSPANNUNG:
-                double spannung = 1.0 + (drehwinkel / 360.0 * 8.0);
-                text = String.format("Spannung: %.1f", spannung);
+                text = "Fadenspannung (TODO)";
                 break;
             case LED_HELLIGKEIT:
-                int helligkeit = (int)(drehwinkel / 360.0 * 5) + 1;
-                text = "Helligkeit: " + helligkeit;
+                text = "LED Helligkeit (TODO)";
                 break;
             case LED_MODUS:
-                int modusIndex = (int)(drehwinkel / 120.0);
-                String[] modi = {"Aus", "Ein", "Automatisch"};
-                text = "Modus: " + modi[modusIndex % 3];
+                text = "LED Modus (TODO)";
                 break;
         }
         werteLabel.setText(text);
@@ -216,11 +228,13 @@ public class DrehradPanel extends JPanel {
 
     /**
      * Benachrichtigt Listener über Wertänderung.
+     * Sprint 1: Nur erste 3 Modi rufen Listener auf
      */
     private void notifyListener() {
         if (listener == null) return;
 
         switch (aktuellerModus) {
+            // Sprint 1: Implementiert
             case STICHMUSTER:
                 int musterNr = (int)(drehwinkel / 360.0 * 15) + 1;
                 listener.onStichmusterChanged(musterNr);
@@ -233,20 +247,12 @@ public class DrehradPanel extends JPanel {
                 double breite = 2.5 + (drehwinkel / 360.0 * 4.5);
                 listener.onStichbreiteChanged(breite);
                 break;
+
+            // TODO Sprint 2: Implementiere diese Cases
             case FADENSPANNUNG:
-                double spannung = 1.0 + (drehwinkel / 360.0 * 8.0);
-                listener.onFadenspannungChanged(spannung);
-                break;
             case LED_HELLIGKEIT:
-                int helligkeit = (int)(drehwinkel / 360.0 * 5) + 1;
-                listener.onLEDHelligkeitChanged(helligkeit);
-                break;
             case LED_MODUS:
-                int modusIndex = (int)(drehwinkel / 120.0) % 3;
-                LED.LEDModus[] modi = {LED.LEDModus.AUS,
-                        LED.LEDModus.EIN,
-                        LED.LEDModus.AUTOMATISCH};
-                listener.onLEDModusChanged(modi[modusIndex]);
+                // Noch nicht implementiert
                 break;
         }
     }

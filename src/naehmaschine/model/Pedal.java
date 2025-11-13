@@ -6,6 +6,9 @@ import java.beans.PropertyChangeSupport;
 /**
  * Modellklasse für das Fußpedal.
  *
+ * Sprint 1: Stub-Implementierung (Platzhalter)
+ * Sprint 2 (TODO): Vollständige Implementierung
+ *
  * Requirements:
  * F2.1: Stufenlose Geschwindigkeitssteuerung
  * F2.2: Sofortiger Stopp beim Loslassen
@@ -32,10 +35,7 @@ public class Pedal {
         support.removePropertyChangeListener(listener);
     }
 
-    /**
-     * F2.1: Pedalposition setzen (0.0 = nicht gedrückt, 1.0 = voll gedrückt).
-     * Geschwindigkeit ist proportional zur Pedalstellung.
-     */
+    // TODO Sprint 2: Implementiere setPosition mit Logic
     public void setPosition(double position) {
         if (position >= 0.0 && position <= 1.0) {
             double oldSpeed = getGeschwindigkeit();
@@ -45,9 +45,6 @@ public class Pedal {
         }
     }
 
-    /**
-     * F2.3: Berechnet Geschwindigkeit (0-1100 U/min) proportional zur Position.
-     */
     public double getGeschwindigkeit() {
         return position * MAX_GESCHWINDIGKEIT;
     }

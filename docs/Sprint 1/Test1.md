@@ -55,3 +55,6 @@ Vorgehen: Controller ruft onStichmusterChanged(13), Model-Event feuert, View wir
 
 Ergebnis: Display zeigt korrekt „Blumenstich“
 Status: Erfolgreich
+
+## Testergebnisse
+![Ergebnisse](../referenced/Architektur/Ergebniss.png)

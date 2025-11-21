@@ -43,10 +43,10 @@ LED.java & Pedal.java: Komponenten-Modelle
 
 ## Traceability - Matrix
 
-| **Requirement** | **Komponenten**                                                               |
-| ----------- | ------------------------------------------------------------------------- |
-| F1.1        | Naehmaschine, Stichmuster, NaehmaschineView, DisplayPanel, DrehradPanel   |
-| F1.2        | DrehradPanel, NaehmaschineView, NaehmaschineController, Naehmaschine      |
+| **Requirement** | **Komponenten**                                                       | **Test**                   |
+| ----------- | ------------------------------------------------------------------------- |----------------------------|
+| F1.1        | Naehmaschine, Stichmuster, NaehmaschineView, DisplayPanel, DrehradPanel   | 
+| F1.2        | DrehradPanel, NaehmaschineView, NaehmaschineController, Naehmaschine      | M1, I1, I3 |
 | F1.3        | Stichmuster, DrehradPanel, NaehmaschineController, DisplayPanel           |
 | F1.4        | NaehmaschineView, DisplayPanel, Naehflaeche, NaehmaschineController       |
 | F2.1        | Pedal, PedalPanel, NaehmaschineView, NaehmaschineController, Naehmaschine |
@@ -57,8 +57,8 @@ LED.java & Pedal.java: Komponenten-Modelle
 | F3.3        | LED, LEDPanel, DrehradPanel, NaehmaschineController, DisplayPanel         |
 | F4.1        | Naehmaschine, DrehradPanel, NaehmaschineController, DisplayPanel          |
 | F4.3        | NaehmaschineView, DisplayPanel, NaehmaschineController, Naehmaschine      |
-| F5.1        | Stichmuster, DrehradPanel, NaehmaschineController, DisplayPanel           |
-| F5.2        | Stichmuster, DrehradPanel, NaehmaschineController, DisplayPanel           |
+| F5.1        | Stichmuster, DrehradPanel, NaehmaschineController, DisplayPanel           | M2, I2,  |
+| F5.2        | Stichmuster, DrehradPanel, NaehmaschineController, DisplayPanel           | M3|
 | F5.3        | DisplayPanel, NaehmaschineView, NaehmaschineController                    |
 
 

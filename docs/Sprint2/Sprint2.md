@@ -55,6 +55,7 @@ Code Reviews wurden regelmäßig durchgeführt und haben früh auf mögliche Des
 
 Kleine, häufige Commits haben die Nachverfolgung von Änderungen vereinfacht.
 
+
 Was lief nicht so gut?
 
 Schätzungen für einige Stories waren zu optimistisch, wodurch gegen Ende des Sprints Zeitdruck entstanden ist.
@@ -64,6 +65,7 @@ Die Kommunikation zu Abhängigkeiten zwischen Modulen war teilweise unklar, was 
 Nicht alle Tests wurden automatisiert, einige manuelle Tests haben viel Zeit in Anspruch genommen.
 
 Es gab kaum technische Spikes, sodass Entscheidungen zu Architekturfragen teilweise spontan getroffen werden mussten.
+
 
 Was werde ich im nächsten Sprint anders machen?
 

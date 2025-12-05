@@ -10,9 +10,7 @@ import java.beans.PropertyChangeListener;
 /**
  * Controller im MVC-Pattern.
  * Vermittelt zwischen Model und View.
- *
- * Sprint 1: Stichmuster, Länge, Breite funktional
- * Sprint 2 (TODO): LED, Pedal, Fadenspannung
+ * Verarbeitet Benutzeraktionen und aktualisiert das Model.
  */
 public class NaehmaschineController {
 
@@ -38,15 +36,12 @@ public class NaehmaschineController {
 
     /**
      * Registriert Listener für Model-Änderungen.
-     * Sprint 1: Stichmuster, Länge, Breite
-     * Sprint 2 (TODO): LED, Pedal, Fadenspannung
      */
     private void setupModelListeners() {
         model.addPropertyChangeListener(new PropertyChangeListener() {
             @Override
             public void propertyChange(PropertyChangeEvent evt) {
                 switch (evt.getPropertyName()) {
-                    // Sprint 1: Implementiert
                     case Naehmaschine.PROP_STICHMUSTER:
                         view.updateStichmusterAnzeige(model.getAktuellesStichmuster());
                         view.updateStichlaengeAnzeige(
@@ -54,35 +49,41 @@ public class NaehmaschineController {
                         view.updateStichbreiteAnzeige(
                                 model.getAktuellesStichmuster().getStichbreite());
                         break;
-
                     case Naehmaschine.PROP_STICHLAENGE:
                         view.updateStichlaengeAnzeige((Double) evt.getNewValue());
                         break;
-
                     case Naehmaschine.PROP_STICHBREITE:
                         view.updateStichbreiteAnzeige((Double) evt.getNewValue());
                         break;
-
-                    // TODO Sprint 2: Implementiere diese Cases
                     case Naehmaschine.PROP_FADENSPANNUNG:
-                        // view.updateFadenspannungAnzeige((Double) evt.getNewValue());
+                        view.updateFadenspannungAnzeige((Double) evt.getNewValue());
                         break;
-
                     case Naehmaschine.PROP_GESCHWINDIGKEIT:
-                        // view.updateGeschwindigkeitAnzeige((Double) evt.getNewValue());
+                        view.updateGeschwindigkeitAnzeige((Double) evt.getNewValue());
                         break;
-
-                    case LED.PROP_MODUS:
-                        // view.updateLEDModus((LED.LEDModus) evt.getNewValue());
-                        break;
-
                     case LED.PROP_HELLIGKEIT:
-                        // view.updateLEDHelligkeit((Integer) evt.getNewValue());
+                        view.updateLEDHelligkeit((Integer) evt.getNewValue());
+                        break;
+                    case Naehmaschine.PROP_SEWING_ACTIVE:
+                        view.updateSewingAnimation((Boolean) evt.getNewValue());
+                        break;
+                    case LED.PROP_MODUS:
+                        view.updateLEDModus((LED.LEDModus) evt.getNewValue());
+
+                        // ← NEU: Wenn Modus auf EIN gewechselt wird
+                        if (evt.getNewValue() == LED.LEDModus.EIN) {
+                            view.updateLEDAktiv(true);
+                        }
+                        // Wenn auf AUS gewechselt wird
+                        else if (evt.getNewValue() == LED.LEDModus.AUS) {
+                            view.updateLEDAktiv(false);
+                        }
+                        // Bei AUTOMATISCH vom Pedal-Status abhängig
+                        else if (evt.getNewValue() == LED.LEDModus.AUTOMATISCH) {
+                            view.updateLEDAktiv(model.getGeschwindigkeit() > 0);
+                        }
                         break;
 
-                    case Naehmaschine.PROP_SEWING_ACTIVE:
-                        // view.updateSewingAnimation((Boolean) evt.getNewValue());
-                        break;
                 }
             }
         });
@@ -90,13 +91,10 @@ public class NaehmaschineController {
 
     /**
      * Registriert Listener für View-Aktionen.
-     * Sprint 1: Stichmuster, Länge, Breite
-     * Sprint 2 (TODO): LED, Pedal, Fadenspannung
      */
     private void setupViewListeners() {
         // Drehrad-Listener für verschiedene Modi
         view.setDrehradListener(new NaehmaschineView.DrehradListener() {
-            // Sprint 1: Implementiert
             @Override
             public void onStichmusterChanged(int nummer) {
                 model.setStichmuster(nummer);
@@ -112,42 +110,48 @@ public class NaehmaschineController {
                 model.setStichbreite(breite);
             }
 
-            // TODO Sprint 2: Implementiere diese Methoden
             @Override
             public void onFadenspannungChanged(double spannung) {
-                // model.setFadenspannung(spannung);
+                model.setFadenspannung(spannung);
             }
 
             @Override
             public void onLEDHelligkeitChanged(int helligkeit) {
-                // model.getLED().setHelligkeit(helligkeit);
+                model.getLED().setHelligkeit(helligkeit);
             }
 
             @Override
             public void onLEDModusChanged(LED.LEDModus modus) {
-                // model.getLED().setModus(modus);
+                model.getLED().setModus(modus);
             }
         });
 
-        // TODO Sprint 2: Pedal-Listener implementieren
-        /*
+        // Pedal-Listener
         view.setPedalListener(new NaehmaschineView.PedalListener() {
             @Override
             public void onPedalPressed(double position) {
                 model.setPedalPosition(position);
+
+                // ← NEU: Bei Automatik-Modus LED einschalten
+                if (model.getLED().getModus() == LED.LEDModus.AUTOMATISCH) {
+                    view.updateLEDAktiv(position > 0);
+                }
             }
 
             @Override
             public void onPedalReleased() {
                 model.setPedalPosition(0.0);
+
+                // ← NEU: Bei Automatik-Modus LED ausschalten
+                if (model.getLED().getModus() == LED.LEDModus.AUTOMATISCH) {
+                    view.updateLEDAktiv(false);
+                }
             }
         });
-        */
     }
 
     /**
      * Aktualisiert alle Anzeigen mit aktuellen Model-Werten.
-     * Sprint 1: Stichmuster, Länge, Breite
      */
     private void updateAllDisplays() {
         view.updateStichmusterAnzeige(model.getAktuellesStichmuster());
@@ -155,11 +159,9 @@ public class NaehmaschineController {
                 model.getAktuellesStichmuster().getStichlaenge());
         view.updateStichbreiteAnzeige(
                 model.getAktuellesStichmuster().getStichbreite());
-
-        // TODO Sprint 2: Weitere Displays aktualisieren
-        // view.updateFadenspannungAnzeige(model.getFadenspannung());
-        // view.updateGeschwindigkeitAnzeige(model.getGeschwindigkeit());
-        // view.updateLEDModus(model.getLED().getModus());
-        // view.updateLEDHelligkeit(model.getLED().getHelligkeit());
+        view.updateFadenspannungAnzeige(model.getFadenspannung());
+        view.updateGeschwindigkeitAnzeige(model.getGeschwindigkeit());
+        view.updateLEDModus(model.getLED().getModus());
+        view.updateLEDHelligkeit(model.getLED().getHelligkeit());
     }
 }

@@ -6,9 +6,6 @@ import java.beans.PropertyChangeSupport;
 /**
  * Modellklasse für die LED-Beleuchtung.
  *
- * Sprint 1: Stub-Implementierung (Platzhalter)
- * Sprint 2 (TODO): Vollständige Implementierung
- *
  * Requirements:
  * F3.1: LED-Beleuchtung
  * F3.2: 3 Modi (Aus, Ein, Automatisch)
@@ -42,14 +39,18 @@ public class LED {
         support.removePropertyChangeListener(listener);
     }
 
-    // TODO Sprint 2: Implementiere setModus mit Logic
+    /**
+     * F3.2: LED-Modus setzen.
+     */
     public void setModus(LEDModus modus) {
         LEDModus old = this.modus;
         this.modus = modus;
         support.firePropertyChange(PROP_MODUS, old, modus);
     }
 
-    // TODO Sprint 2: Implementiere setHelligkeit mit Logic
+    /**
+     * F3.3: Helligkeit setzen (1-5).
+     */
     public void setHelligkeit(int helligkeit) {
         if (helligkeit >= 1 && helligkeit <= 5) {
             int old = this.helligkeit;

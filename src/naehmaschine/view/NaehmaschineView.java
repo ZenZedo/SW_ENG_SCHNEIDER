@@ -7,27 +7,26 @@ import naehmaschine.model.LED;
 
 /**
  * Hauptfenster der Nähmaschinen-GUI.
- * Sprint 1: Display und Drehrad für Stichmuster/Länge/Breite
- * Sprint 2 (TODO): LED, Pedal, Naehflaeche
+ * Verwendet JavaFX-ähnliche Struktur mit Swing.
  */
 public class NaehmaschineView extends JFrame {
 
     // GUI-Komponenten
     private DisplayPanel displayPanel;
     private DrehradPanel drehradPanel;
-    // TODO Sprint 2: private PedalPanel pedalPanel;
-    // TODO Sprint 2: private LEDPanel ledPanel;
-    // TODO Sprint 2: private Naehflaeche naehflaeche;
+    private PedalPanel pedalPanel;
+    private LEDPanel ledPanel;
+    private Naehflaeche naehflaeche;
 
     // Listener Interfaces
     private DrehradListener drehradListener;
-    // TODO Sprint 2: private PedalListener pedalListener;
+    private PedalListener pedalListener;
 
     /**
      * Konstruktor - Erstellt das GUI-Layout.
      */
     public NaehmaschineView() {
-        super("Nähmaschinen-Simulator (Sprint 1)");
+        super("Nähmaschinen-Simulator");
         initializeComponents();
         setupLayout();
         setupFrame();
@@ -35,14 +34,13 @@ public class NaehmaschineView extends JFrame {
 
     /**
      * Initialisiert alle GUI-Komponenten.
-     * Sprint 1: Display, Drehrad
      */
     private void initializeComponents() {
         displayPanel = new DisplayPanel();
         drehradPanel = new DrehradPanel();
-        // TODO Sprint 2: pedalPanel = new PedalPanel();
-        // TODO Sprint 2: ledPanel = new LEDPanel();
-        // TODO Sprint 2: naehflaeche = new Naehflaeche();
+        pedalPanel = new PedalPanel();
+        ledPanel = new LEDPanel();
+        naehflaeche = new Naehflaeche();
     }
 
     /**
@@ -51,21 +49,26 @@ public class NaehmaschineView extends JFrame {
     private void setupLayout() {
         setLayout(new BorderLayout(10, 10));
 
-        // Header
-        JLabel titleLabel = new JLabel("Nähmaschinen-Simulator (Sprint 1)",
+        // Header mit Titel und LED
+        JPanel headerPanel = new JPanel(new BorderLayout());
+        JLabel titleLabel = new JLabel("Nähmaschinen-Simulator",
                 SwingConstants.CENTER);
         titleLabel.setFont(new Font("Arial", Font.BOLD, 24));
-        titleLabel.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 0));
-        add(titleLabel, BorderLayout.NORTH);
+        headerPanel.add(titleLabel, BorderLayout.CENTER);
+        headerPanel.add(ledPanel, BorderLayout.EAST);
+        add(headerPanel, BorderLayout.NORTH);
 
-        // Zentrum: Display
-        add(displayPanel, BorderLayout.CENTER);
+        // Zentrum: Display und Nähfläche
+        JPanel centerPanel = new JPanel(new BorderLayout(10, 10));
+        centerPanel.add(displayPanel, BorderLayout.NORTH);
+        centerPanel.add(naehflaeche, BorderLayout.CENTER);
+        add(centerPanel, BorderLayout.CENTER);
 
         // Rechts: Drehrad-Steuerung
         add(drehradPanel, BorderLayout.EAST);
 
-        // TODO Sprint 2: LED und Nähfläche hinzufügen
-        // TODO Sprint 2: Pedal hinzufügen
+        // Unten: Pedal
+        add(pedalPanel, BorderLayout.SOUTH);
 
         // Padding
         ((JPanel)getContentPane()).setBorder(
@@ -77,12 +80,12 @@ public class NaehmaschineView extends JFrame {
      */
     private void setupFrame() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(900, 500);
+        setSize(1200, 800);
         setLocationRelativeTo(null);
         setResizable(false);
     }
 
-    // Listener Interfaces (vollständig definiert für Sprint 2)
+    // Listener Interfaces
     public interface DrehradListener {
         void onStichmusterChanged(int nummer);
         void onStichlaengeChanged(double laenge);
@@ -92,13 +95,10 @@ public class NaehmaschineView extends JFrame {
         void onLEDModusChanged(LED.LEDModus modus);
     }
 
-    // TODO Sprint 2: PedalListener Interface
-    /*
     public interface PedalListener {
         void onPedalPressed(double position);
         void onPedalReleased();
     }
-    */
 
     // Setter für Listener
     public void setDrehradListener(DrehradListener listener) {
@@ -106,18 +106,21 @@ public class NaehmaschineView extends JFrame {
         drehradPanel.setDrehradListener(listener);
     }
 
-    // TODO Sprint 2:
-    /*
+
+    public void updateLEDAktiv(boolean aktiv) {
+        ledPanel.setAktiv(aktiv);
+    }
+
+
     public void setPedalListener(PedalListener listener) {
         this.pedalListener = listener;
         pedalPanel.setPedalListener(listener);
     }
-    */
 
-    // Update-Methoden (Sprint 1: Implementiert)
+    // Update-Methoden (werden vom Controller aufgerufen)
     public void updateStichmusterAnzeige(Stichmuster muster) {
         displayPanel.updateStichmuster(muster);
-        // TODO Sprint 2: naehflaeche.setStichmuster(muster);
+        naehflaeche.setStichmuster(muster);
     }
 
     public void updateStichlaengeAnzeige(double laenge) {
@@ -128,8 +131,6 @@ public class NaehmaschineView extends JFrame {
         displayPanel.updateStichbreite(breite);
     }
 
-    // TODO Sprint 2: Update-Methoden für weitere Features
-    /*
     public void updateFadenspannungAnzeige(double spannung) {
         displayPanel.updateFadenspannung(spannung);
     }
@@ -154,5 +155,5 @@ public class NaehmaschineView extends JFrame {
             naehflaeche.stopSewing();
         }
     }
-    */
 }
+

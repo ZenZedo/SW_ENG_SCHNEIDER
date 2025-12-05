@@ -7,16 +7,14 @@ import java.util.List;
 
 /**
  * Hauptmodell der Nähmaschine.
- *
- * Sprint 1: F1.1-F1.4 (Stichmuster), F5.1-F5.3 (Länge/Breite)
- * Sprint 2 (TODO): F2 (Pedal), F3 (LED), F4 (Fadenspannung)
+ * Verwendet das Observer Pattern (PropertyChangeSupport) um Views zu benachrichtigen.
  *
  * Requirements:
- * F1.1-F1.4: Stichmuster (10-20 verschiedene) ✓
- * F2.1-F2.3: Geschwindigkeitssteuerung (TODO)
- * F3.1-F3.3: LED-Steuerung (TODO)
- * F4.1, F4.3: Fadenspannung (TODO)
- * F5.1-F5.3: Stichlänge und -breite ✓
+ * F1.1-F1.4: Stichmuster (10-20 verschiedene)
+ * F2.1-F2.3: Geschwindigkeitssteuerung
+ * F3.1-F3.3: LED-Steuerung
+ * F4.1, F4.3: Fadenspannung
+ * F5.1-F5.3: Stichlänge und -breite
  */
 public class Naehmaschine {
 
@@ -35,10 +33,10 @@ public class Naehmaschine {
     // Komponenten
     private final List<Stichmuster> verfuegbareMuster;
     private Stichmuster aktuellesStichmuster;
-    private final LED led;              // Sprint 1: Stub
-    private final Pedal pedal;          // Sprint 1: Stub
-    private double fadenspannung;       // Sprint 1: Stub
-    private boolean sewingActive;       // Sprint 1: Stub
+    private final LED led;
+    private final Pedal pedal;
+    private double fadenspannung;  // 1-9
+    private boolean sewingActive;
 
     /**
      * Konstruktor - Initialisiert alle Stichmuster und Komponenten.
@@ -57,23 +55,30 @@ public class Naehmaschine {
         // Erstes Muster als Standard wählen
         aktuellesStichmuster = verfuegbareMuster.get(0);
 
-        // LED Observer hinzufügen (für Sprint 2 vorbereitet)
+        // LED Observer hinzufügen
         led.addPropertyChangeListener(evt ->
                 support.firePropertyChange(evt.getPropertyName(),
                         evt.getOldValue(),
                         evt.getNewValue()));
 
-        // Pedal Observer hinzufügen (für Sprint 2 vorbereitet)
+        // Pedal Observer hinzufügen
         pedal.addPropertyChangeListener(evt -> {
             support.firePropertyChange(PROP_GESCHWINDIGKEIT,
                     evt.getOldValue(),
                     evt.getNewValue());
+
+            // F3.2: Bei Automatik-Modus LED einschalten
+            if (led.getModus() == LED.LEDModus.AUTOMATISCH) {
+                boolean pedalAktiv = (double)evt.getNewValue() > 0;
+                if (pedalAktiv != sewingActive) {
+                    setSewingActive(pedalAktiv);
+                }
+            }
         });
     }
 
     /**
      * F1.1: Initialisiert 15 verschiedene Stichmuster.
-     * Sprint 1: Vollständig implementiert
      */
     private void initializeStichmuster() {
         verfuegbareMuster.add(new Stichmuster(1, "Geradstich", 2.5, 0.0,
@@ -119,7 +124,6 @@ public class Naehmaschine {
 
     /**
      * F1.2, F1.3: Stichmuster auswählen und Parameter laden.
-     * Sprint 1: Vollständig implementiert
      */
     public void setStichmuster(int nummer) {
         if (nummer >= 1 && nummer <= verfuegbareMuster.size()) {
@@ -139,7 +143,6 @@ public class Naehmaschine {
 
     /**
      * F5.1: Stichlänge einstellen (1.5-5.0 mm).
-     * Sprint 1: Vollständig implementiert
      */
     public void setStichlaenge(double laenge) {
         if (laenge >= 1.5 && laenge <= 5.0) {
@@ -151,7 +154,6 @@ public class Naehmaschine {
 
     /**
      * F5.2: Stichbreite einstellen (2.5-7.0 mm).
-     * Sprint 1: Vollständig implementiert
      */
     public void setStichbreite(double breite) {
         if (breite >= 2.5 && breite <= 7.0) {
@@ -161,10 +163,8 @@ public class Naehmaschine {
         }
     }
 
-    // TODO Sprint 2: Implementiere setFadenspannung
     /**
      * F4.1: Fadenspannung einstellen.
-     * Sprint 2 (TODO): Vollständige Implementierung
      */
     public void setFadenspannung(double spannung) {
         if (spannung >= 1.0 && spannung <= 9.0) {
@@ -174,10 +174,8 @@ public class Naehmaschine {
         }
     }
 
-    // TODO Sprint 2: Implementiere setPedalPosition
     /**
      * F2.1: Geschwindigkeit über Pedal setzen (0-1100 U/min).
-     * Sprint 2 (TODO): Vollständige Implementierung
      */
     public void setPedalPosition(double position) {
         pedal.setPosition(position);
@@ -200,3 +198,4 @@ public class Naehmaschine {
     }
     public boolean isSewingActive() { return sewingActive; }
 }
+

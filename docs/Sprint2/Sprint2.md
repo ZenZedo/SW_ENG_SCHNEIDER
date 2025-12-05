@@ -2,36 +2,30 @@
 
 ### Sprint Planung
 
-Ziel: Entwicklung des Grundbausteins
+Ziel: Vervollständigung des Programms
 
-- Interface einrichten
-
-- Stichpatternmanager entwickeln
-
-- Systemcontroller entwickeln
-
-- Input Handler für grundbausteine entwickeln
+- Restliche requirements einrichten
 
 
 
 **Requirements:**
 
-| **ID**   | **Titel**               | **Beschreibung (Kurz)**                                         | **Zugehörige Komponenten**                               |
-| -------- | ----------------------- | --------------------------------------------------------------- | -------------------------------------------------------- |
-| **F1.1** | Stichmuster             | Maschine hat 10–20 verschiedene Stichmuster.                    | `StitchPatternManager`                                   |
-| **F1.2** | Auswahl SM              | Stichmuster müssen über ein Drehrad auswählbar sein.            | `InputHandler`, `StitchPatternManager`, `DisplayManager` |
-| **F1.3** | Voreinstellung          | Jedes Stichmuster hat Parameter (Länge, Breite, Nadelposition). | `SystemController`, `StitchPatternManager`               |
-| **F1.4** | Anzeige SM              | Aktuell gewähltes Stichmuster soll im Display angezeigt werden. | `DisplayManager`, `StitchPatternManager`                 |
-| **F5.1** | Stichlänge              | Einstellbar im Bereich 1.5–5 mm.                                | `InputHandler`, `StitchPatternManager`                   |
-| **F5.2** | Stichbreite             | Einstellbar im Bereich 2.5–7 mm.                                | `InputHandler`, `StitchPatternManager`                   |
-| **F5.3** | Länge/Breite Anzeige    | Aktuelle Werte im Display anzeigen.                             | `DisplayManager`, `StitchPatternManager`                 |
+| ** ID **   | ** Titel **                      | ** Beschreibung (Kurz) **                                                                                                | ** Zugehörige Komponenten **                 |
+| ---- | -------------------------- | ------------------------------------------------------------------------------------------------------------------ | --------------------------------------- |
+| F2.1 | Stufenlose Geschwindigkeit | Nähgeschwindigkeit wird mit dem Fußpedal geregelt und ist proportional zur Pedalstellung.                          | MotorController, InputHandler           |
+| F2.2 | Stopp bei Loslassen Pedal  | Maschine stoppt sofort, wenn das Fußpedal losgelassen wird.                                                        | MotorController, SafetyManager          |
+| F2.3 | Max. Nähgeschwindigkeit    | Maximale Nähgeschwindigkeit beträgt 0 bis 1100 U/min.                                                              | MotorController                         |
+| F3.1 | LED‑Nähbereichsbeleuchtung | Nähbereich der Maschine wird mit einer LED beleuchtet.                                                             | LEDController, DisplayManager           |
+| F3.2 | Manuelle LED‑Bedienung     | LED‑Beleuchtung hat 3 Zustände: Aus, Ein, Automatik; im Automatik‑Modus schaltet sich LED bei Pedalbetätigung ein. | LEDController, InputHandler             |
+| F3.3 | Helligkeit LED             | LED‑Helligkeit ist in fünf Stufen von 1 (dunkel) bis 5 (hell) einstellbar.                                         | LEDController, DisplayManager           |
+| F4.1 | Fadenspannung einstellen   | Fadenspannung ist einstellbar, entweder manuell oder elektronisch.                                                 | ThreadTensionController, InputHandler   |
+| F4.3 | Anzeige Fadenspannung      | Aktuelle Fadenspannung wird im Display angezeigt.                                                                  | DisplayManager, ThreadTensionController |
 
 **Sprint-Zeitraum:** Xx.Xx.2025 - Xx.Xx.2025
 
 **Sprintziel:**
 
-1. Die Voreinstellungen für die Stichmuster sollen über das Bedienelement eingestellt werden können.
-2. Das Gerät soll eine Funktionierende Anzeige haben.
+1. Es sol eine funktionsfähige Nähmaschine entstehen
 
 ### Schritt 2: Architektur
 

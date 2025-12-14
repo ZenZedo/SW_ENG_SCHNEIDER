@@ -2,7 +2,7 @@
 
 **Version:** 1.0  
 **Datum:** Dezember 2025  
-**Verfasser:** Entwicklungsteam
+**Verfasser:** David Schneider
 
 ---
 
